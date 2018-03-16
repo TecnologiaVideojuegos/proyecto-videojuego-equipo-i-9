@@ -1,0 +1,9 @@
+#!/bin/sh
+
+javac PathPlan/*.java
+
+javadoc -breakiterator -d javadoc PathPlan
+
+jar cfm PathPanel.jar PathPlan/Manifest PathPlan/*.class
+
+zip -r PathPlan.zip PathPlan make 00readme.txt shortestpaths.m getpath.m pathlen.m demovalues.png javadoc
