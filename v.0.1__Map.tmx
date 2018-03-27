@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="2018.03.21" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="magecity.tsx"/>
+ <layer name="Capa de Patrones 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0TERACAMALHijwXw7wXw0IFyGSLg71tENAAAAAAAAAAAAAAAAAAAAABKGkdPtB5oquz+mIn88OMnfgAAAAAAAAAAAAAAAAAAAAAAAAAAAJVs4E1BMw==
+  </data>
+ </layer>
+ <layer name="Capa de patrones 2" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2LlOw0AQBmDzWHS0lJQ8CEcDpOFoOBqOV+GSuBrgpZgotmSNNnKTtSL8fdKvaO1IlnY1M06aBgAAAAAAAAAAAAAAAGDYXmQ/chA5LKwZ11HkOHISmRXWjOs0chY5j1wU1upkHF1fuoxcRa4jN4W1OhlH15duI3eR+8hDYd3VCXUN9alcJ9Q11KdynUzVY+SpzXPF5wz1Ke9ZC++RjzafIzxv2b7n/jVVtc8j/97r73v/nvmx8B35afMb2dxomu0VJtdDf9/798yPha+meYtsdZ/z89hZYXIf6u97qUdN/f+T18hLL/Pz2F1hch/K+517lLle19B7VO5R5np9uSZK87zrTeZ6fbkmSvN81n7XXK8v96Bl83zqs3wsy3pQvm6Wj2NZD8rXzfL1YpavF7McAAAAAAAAAAAAAAAAAAAAAAD+jz/00Kam
+  </data>
+ </layer>
+ <layer name="Capa de patrones 3" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2TFOwzAUBuCUS8AGt+IOjF1hgw02uC0LttIXBctVOiQviH6f9JSqrSrLf2zH7jAAAAAAAAAAAAAAAAAArOe51MvejWDyWupt70YweS/1sXcjmOapz1JfO7flGkR/n1sfzFO5or/j2uZinsoV/R3XNhfzVK7o77i2uZCnt2a0ufDb42H9Cr0xUDN6aorR9wa/Oc+jNwZqRjWD46nkMbo5jLW2eR69tbpmVDO4LXU3yKOdK7aonvnzVP3OfamH0+trPrc6JlTPfC1p8/OclSfGxXwtafPznJUnxsW5fV+877w9x6X7DPvDbS2dhzjHyrV0v7efO8fa1tL9bjzkWrrfjQcA4D/yv9Dfcsm5LAAAAAAAAAAAAAAAAAAAAOv5ARQ5YTQ=
+  </data>
+ </layer>
+</map>
