@@ -84,11 +84,11 @@ public class MenuScreen extends BasicGameState {
 
 	public void loadImagesAndAnimations() throws SlickException{
             //Mirar
-		SandTileGraphic = new Image("C:\\Users\\dante\\Desktop\\Programas uni\\Slick2d\\src\\Aa_juego\\Graficos/mapa.png");
-		StartGameButtonGraphic = new Image("C:\\Users\\dante\\Desktop\\Programas uni\\Slick2d\\src\\Aa_juego\\Graficos/start.png");
-		EditMapButtonGraphic = new Image("C:\\Users\\dante\\Desktop\\Programas uni\\Slick2d\\src\\Aa_juego\\Graficos/edit.png");
-		TowerDefenseTitleGraphic = new Image("C:\\Users\\dante\\Desktop\\Programas uni\\Slick2d\\src\\Aa_juego\\Graficos/Majora.png");
-		ExitButtonGraphic = new Image ("C:\\Users\\dante\\Desktop\\Programas uni\\Slick2d\\src\\Aa_juego\\Graficos/exit.png");
+		SandTileGraphic = new Image("Graficos/mapa.png");
+		StartGameButtonGraphic = new Image("Graficos/start.png");
+		EditMapButtonGraphic = new Image("Graficos/edit.png");
+		TowerDefenseTitleGraphic = new Image("Graficos/Majora.png");
+		ExitButtonGraphic = new Image ("Graficos/exit.png");
 	}
 
 	public void mouseClicked( float x, float y, StateBasedGame sbg, GameContainer container) throws SlickException{

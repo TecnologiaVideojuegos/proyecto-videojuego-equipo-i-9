@@ -59,6 +59,7 @@ public class PruebaMapa extends BasicGameState{
             img.setRotation( (float) tw.getAngleOfRotation());
             img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}*/
         drawTorre(g);
+        
 	g.scale(0.35f,0.35f);
         map.render(1400, 0);
 	g.resetTransform();
