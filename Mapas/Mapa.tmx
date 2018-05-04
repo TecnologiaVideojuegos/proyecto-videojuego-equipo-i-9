@@ -6,12 +6,6 @@
    H4sIAAAAAAAACu2XQQ6AIAwEW3vxF+L/PykHSQipurUIgXhoshqCTndrhIloiSWxuIPeYoVYeyfdg1nj50Lzg67NvzYsjb/l839+f/4ZXI/yo1m15v8rflR7+cvvQr4G6UVNftTzN/xyasn0XS9m9b/kT9eBrvsyE3/JqfFrParFL4SxWWbhbs/Eg/qpzYJnXjzeyoW27IN4WEuLcv8tv+Y/mp0Z/n8t+bf4752F9F7a+q/9t2pP5lHmUc4/o+V/Fv4DH+x2LgAQAAA=
   </data>
  </layer>
- <objectgroup name="Capa de Objetos 1">
-  <object id="7" x="56" y="122" width="92" height="140"/>
- </objectgroup>
- <objectgroup name="Capa de Objetos 2">
-  <object id="9" x="759" y="541" width="184" height="37"/>
- </objectgroup>
  <layer name="Capa de patrones 2" width="32" height="32">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAACu3BAQ0AAADCoPdPbQ8HFAAAAPBuEQAcxwAQAAA=
