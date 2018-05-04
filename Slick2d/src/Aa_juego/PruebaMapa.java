@@ -5,6 +5,7 @@
  */
 package Aa_juego;
 import Aa_juego.Torre.*;
+import java.util.ArrayList;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +23,7 @@ import org.newdawn.slick.tiled.TiledMap;
  */
 public class PruebaMapa extends BasicGameState{
 
+    private static int selectedTower =-1;
     private Towers tw;
     private TiledMap map;
     private String mapName;
@@ -32,6 +34,7 @@ public class PruebaMapa extends BasicGameState{
     private boolean click = false;
     private boolean rClick = false;
     private Subdito sb;
+    private ArrayList<Towers> towerList = new ArrayList<Towers>();
     @Override
     public int getID() {
         return originalTileID;
@@ -47,14 +50,15 @@ public class PruebaMapa extends BasicGameState{
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         map.render(10, 10, 4,4,15,15);
-	if(click){
+	/*if(click){
             Image img = new Image("Graficos/torre_3.png");
             img.setRotation( (float) tw.getAngleOfRotation());
             img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}
         if(rClick){
             Image img = new Image("Graficos/Megaman_sprite1.png");
             img.setRotation( (float) tw.getAngleOfRotation());
-            img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}
+            img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}*/
+        drawTorre(g);
 	g.scale(0.35f,0.35f);
         map.render(1400, 0);
 	g.resetTransform();
@@ -66,23 +70,43 @@ public class PruebaMapa extends BasicGameState{
         
     }
     public void mouseClicked(int button, int x, int y, int clickCount) {
-		if (button == 0) {			
-                    message = "Single Click: "+button+" "+x+","+y;
-                    tw = new Arrow(x,y);
-                    click = true;
-                    /*try {
-                        Image img = new Image("Graficos/torre.png");
-                        img.setRotation( (float) tw.getAngleOfRotation());
-                        img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());
-                        
-                    } catch (SlickException ex) {
-                        Logger.getLogger(PruebaMapa.class.getName()).log(Level.SEVERE, null, ex);
-                    }*/
+		if (button == 0 && getNearestTower(x,y) == null) {	
+                    Towers newTower = new Arrow(x,y);
+                    towerList.add(newTower);
 		}
-		if (button == 1) {
+                else if(button == 1){
+				Towers t = getNearestTower(x,y);
+				if(t!=null){			
+					towerList.remove(t);
+				
+			}
+                /*else if (selectedTower == 0) {
                     message = "Double Click: "+button+" "+x+","+y;
                     rClick = true;
                     sb = new SubditoSoldado(x,y);
-		}
+		}*/
 	}
+    }
+    public Towers getNearestTower(double x, double y){
+	double distanceApproximation=100;
+	Towers nearestTower=null;
+	for(Towers t: towerList){
+		if(Math.abs(t.getxPos()-x)+Math.abs(t.getyPos()-y)<distanceApproximation){
+			nearestTower = t;
+			distanceApproximation =Math.abs(t.getxPos()-x)+Math.abs(t.getyPos()-y);
+		}
+
+	}
+	return nearestTower;
+	}
+    private void drawTorre(Graphics g) throws SlickException{
+        for(int i = 0; i < towerList.size(); i++){
+            Towers t = towerList.get(i);
+            Image img = new Image("Graficos/torre_3.png");
+            img.setRotation( (float) t.getAngleOfRotation());
+            img.drawCentered((float) t.getxPos(), (float) t.getyPos());
+            
+        }
+
+    }
 }
