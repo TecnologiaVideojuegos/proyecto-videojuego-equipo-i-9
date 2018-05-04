@@ -51,6 +51,10 @@ public class PruebaMapa extends BasicGameState{
             Image img = new Image("Graficos/torre_3.png");
             img.setRotation( (float) tw.getAngleOfRotation());
             img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}
+        if(rClick){
+            Image img = new Image("Graficos/Megaman_sprite1.png");
+            img.setRotation( (float) tw.getAngleOfRotation());
+            img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}
 	g.scale(0.35f,0.35f);
         map.render(1400, 0);
 	g.resetTransform();
@@ -62,7 +66,7 @@ public class PruebaMapa extends BasicGameState{
         
     }
     public void mouseClicked(int button, int x, int y, int clickCount) {
-		if (clickCount == 1) {			
+		if (button == 0) {			
                     message = "Single Click: "+button+" "+x+","+y;
                     tw = new Arrow(x,y);
                     click = true;
@@ -75,10 +79,10 @@ public class PruebaMapa extends BasicGameState{
                         Logger.getLogger(PruebaMapa.class.getName()).log(Level.SEVERE, null, ex);
                     }*/
 		}
-		if (clickCount == 2) {
+		if (button == 1) {
                     message = "Double Click: "+button+" "+x+","+y;
                     rClick = true;
-                    sb = new SubditoSoldado(location);
+                    sb = new SubditoSoldado(x,y);
 		}
 	}
 }
