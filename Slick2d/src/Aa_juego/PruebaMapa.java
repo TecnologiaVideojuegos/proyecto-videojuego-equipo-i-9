@@ -102,7 +102,7 @@ public class PruebaMapa extends BasicGameState{
     private void drawTorre(Graphics g) throws SlickException{
         for(int i = 0; i < towerList.size(); i++){
             Towers t = towerList.get(i);
-            Image img = new Image("Graficos/torre_3.png");
+            Image img = new Image("Graficos/torre.png");
             img.setRotation( (float) t.getAngleOfRotation());
             img.drawCentered((float) t.getxPos(), (float) t.getyPos());
             
