@@ -12,8 +12,9 @@ package Aa_juego;
 public class SubditoExplorador extends Subdito{
     
     
-    public SubditoExplorador (int[][] location){
-        super (location, health, speed, armor, name, type.Pathfinder);
+    public SubditoExplorador (double xPos, double yPos){
+        
+        super (xPos, yPos, health, speed, armor, name, type.Pathfinder);
     }
     private static String name = "Pathfinder";
     private static double health = 100;

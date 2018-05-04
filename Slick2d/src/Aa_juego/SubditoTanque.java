@@ -14,8 +14,9 @@ import Aa_juego.Subdito.type;
 public class SubditoTanque extends Subdito{
     
     
-    public SubditoTanque (int[][] location){
-        super (location, health, speed, armor, name, type.Tank);
+    public SubditoTanque (double xPos, double yPos){
+        
+        super (xPos, yPos, health, speed, armor, name, type.Tank);
     }
     private static String name = "Tank";
     private static double health = 200;

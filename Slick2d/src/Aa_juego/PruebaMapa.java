@@ -30,6 +30,8 @@ public class PruebaMapa extends BasicGameState{
     private int originalTileID = 0;
     private String message = "------";
     private boolean click = false;
+    private boolean rClick;
+    private Subdito sb;
     @Override
     public int getID() {
         return originalTileID;
@@ -46,7 +48,7 @@ public class PruebaMapa extends BasicGameState{
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         map.render(10, 10, 4,4,15,15);
 	if(click){
-            Image img = new Image("Graficos/torre.png");
+            Image img = new Image("Graficos/torre_3.png");
             img.setRotation( (float) tw.getAngleOfRotation());
             img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}
 	g.scale(0.35f,0.35f);
@@ -75,6 +77,8 @@ public class PruebaMapa extends BasicGameState{
 		}
 		if (clickCount == 2) {
                     message = "Double Click: "+button+" "+x+","+y;
+                    rClick = true;
+                    sb = new SubditoSoldado(location);
 		}
 	}
 }

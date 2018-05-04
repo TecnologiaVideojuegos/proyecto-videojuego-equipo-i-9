@@ -17,8 +17,8 @@ abstract public class Subdito {
 
     private double speed; 
     private double armor;
-    private float XLoc;
-    private float YLoc;
+    private double XLoc;
+    private double YLoc;
     private String name;
     private boolean alive;
     /*private final double freezeMultiplier = 0.3;	//how much speed is reduced by when frozen
@@ -26,21 +26,19 @@ abstract public class Subdito {
     private long freezeStartTime = -10000;	//when the critter was frozen
     private long freezeDuration = 4000;	*/	//How long freeze lasts in ms
     public boolean canMove = true;
-    private int[][] locations;
     protected type tipoSubdito;
     private double distanciaRecorrida;
     private boolean visible = true;
     
     
-    public Subdito (int[][] pLocations,double pHealth, double pSpeed, double pArmor, String pName, type pTipoSubdito){
+    public Subdito (double xPos, double yPos, double pHealth, double pSpeed, double pArmor, String pName, type pTipoSubdito){
         this.health = pHealth;
         this.armor = pArmor;
         this.speed = pSpeed;
         this.name = pName;
-        this.XLoc = pLocations[0][0];
-        this.YLoc = pLocations[0][1];
+        this.XLoc = xPos;
+        this.YLoc = yPos;
         alive = true;
-        locations = pLocations;
         this.tipoSubdito = pTipoSubdito;
         distanciaRecorrida = 0;
         
@@ -73,11 +71,11 @@ abstract public class Subdito {
         return armor;
     }
 
-    public float getXLoc() {
+    public double getXLoc() {
         return XLoc;
     }
 
-    public float getYLoc() {
+    public double getYLoc() {
         return YLoc;
     }
 
