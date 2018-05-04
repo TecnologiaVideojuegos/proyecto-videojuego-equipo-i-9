@@ -30,7 +30,7 @@ public class PruebaMapa extends BasicGameState{
     private int originalTileID = 0;
     private String message = "------";
     private boolean click = false;
-    private boolean rClick;
+    private boolean rClick = false;
     private Subdito sb;
     @Override
     public int getID() {
