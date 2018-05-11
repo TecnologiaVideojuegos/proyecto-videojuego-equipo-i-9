@@ -28,6 +28,8 @@ abstract public class Subdito {
     public boolean canMove = true;
     protected type tipoSubdito;
     private double distanciaRecorrida;
+    private boolean arrive = false;
+
     private boolean visible = true;
     
     
@@ -102,7 +104,14 @@ abstract public class Subdito {
     public boolean isVisible() {
         return visible;
     }
+    
+    public boolean isArrive() {
+        return arrive;
+    }
 
+    public void setArrive(boolean arrive) {
+        this.arrive = arrive;
+    }
     
     
 }

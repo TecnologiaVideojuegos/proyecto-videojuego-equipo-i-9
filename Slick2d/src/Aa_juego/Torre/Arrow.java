@@ -24,7 +24,7 @@ public class Arrow extends Towers{
     private static int newbuyingCost = 100;
     private static int newRefundValue = 80;
     private static double newReloadTime = 0.5;
-    private static double newRange = 100;
+    private static double newRange = 500;
     private static double newPower = 0.8;
 
 }

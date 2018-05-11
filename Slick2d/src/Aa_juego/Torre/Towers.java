@@ -124,11 +124,11 @@ public abstract class Towers {
         this.towerType = towerType;
     }
 
-    public double getCritterTravelDistanceMaximun() {
+    public double getSubditoTravelDistanceMaximun() {
         return critterTravelDistanceMaximun;
     }
 
-    public void setCritterTravelDistanceMaximun(double critterTravelDistanceMaximun) {
+    public void setSubditoTravelDistanceMaximun(double critterTravelDistanceMaximun) {
         this.critterTravelDistanceMaximun = critterTravelDistanceMaximun;
     }
 

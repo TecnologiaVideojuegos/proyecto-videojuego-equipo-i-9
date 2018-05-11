@@ -56,6 +56,11 @@ public class Proyectil {
             yLocation += speedBullet*Math.sin(angleOfProjectileInRadians());
         }
     }
+    
+    public double angleOfProjectileInDegrees(){
+        return (180/Math.PI)*Math.atan2(yDestination-yInit, xDestination-xInit);
+    }
+
 
     public double getxLocation() {
         return xLocation;
