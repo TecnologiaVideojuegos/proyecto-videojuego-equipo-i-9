@@ -79,6 +79,7 @@ public class PruebaMapa extends BasicGameState{
 	targetSubdito();
 	attackSubdito();
 
+        
     }
     public void mouseClicked(int button, int x, int y, int clickCount) {
 	/*if (button == 0 && key == Input.KEY_SPACE){
