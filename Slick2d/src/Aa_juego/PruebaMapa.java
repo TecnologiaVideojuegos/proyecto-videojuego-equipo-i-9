@@ -40,6 +40,7 @@ public class PruebaMapa extends BasicGameState{
     private ArrayList<Subdito> subditoList = new ArrayList<Subdito>();
     private ArrayList<Proyectil> projectileList = new ArrayList<Proyectil>();
     private ArrayList<Proyectil> pToRemove;
+    private boolean waveInProgress = false;
     @Override
     public int getID() {
         return originalTileID;
@@ -64,8 +65,10 @@ public class PruebaMapa extends BasicGameState{
             img.setRotation( (float) tw.getAngleOfRotation());
             img.drawCentered( (float) tw.getxPos(), (float) tw.getyPos());}*/
         drawTorre(g);
-        drawSubdito(g);
-        drawProyectil(g);
+        if(waveInProgress){
+            drawSubdito(g);
+            drawProyectil(g);
+        }
 	g.scale(0.35f,0.35f);
         map.render(1400, 0);
 	g.resetTransform();
@@ -74,7 +77,7 @@ public class PruebaMapa extends BasicGameState{
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-	updateProjectiles();			
+        updateProjectiles();			
 	updateSubdito();
 	targetSubdito();
 	attackSubdito();
@@ -89,6 +92,7 @@ public class PruebaMapa extends BasicGameState{
         /*else*/ if (button == 0 && getNearestTower(x,y) == null) {	
             Towers newTower = new Arrow(x,y);
             towerList.add(newTower);
+            waveInProgress = true;
 	}
         else if(button == 1){
             Towers t = getNearestTower(x,y);
