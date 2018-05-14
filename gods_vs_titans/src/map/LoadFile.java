@@ -21,7 +21,7 @@ public class LoadFile {
         
 	//Hay que cambiarlo para poder jugar
         
-	private static final String folderName = "C:\\Users\\dante\\Desktop\\Slick2d_1\\src\\mapSaves";
+	private static final String folderName = "C:\\Users\\dante\\Documents\\GitHub\\proyecto-videojuego-equipo-i-9\\gods_vs_titans\\src\\mapSaves";
         
         
         
