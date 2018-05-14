@@ -15,8 +15,18 @@ public class LoadFile {
 	private String name = "";
 	private String userInput = "";
 	private String mapInfo = "";
-	
+        
+        
+        
+        
+	//Hay que cambiarlo para poder jugar
+        
 	private static final String folderName = "C:\\Users\\dante\\Desktop\\Slick2d_1\\src\\mapSaves";
+        
+        
+        
+        
+        
 	private static final File directory = new File(folderName);
 	private static ArrayList<String> files;
 	private static ArrayList<Map> mapList;
