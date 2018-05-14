@@ -26,8 +26,6 @@ import org.newdawn.slick.tiled.TiledMap;
  */
 public class PruebaMapa extends BasicGameState{
 
-    
-    private static Mapa currentMap;
     private static int selectedTower =-1;
     private long lastClick=(-1*200);
     private Towers tw;
@@ -332,115 +330,7 @@ public class PruebaMapa extends BasicGameState{
 			return false;
 	}
 
-    private void drawMapandOverlay(GameContainer container, Graphics g){
-                    //draw map and background
-                    for(int i = 0 ; i < container.getWidth()/32 ; i++){
-                            for(int j = 0 ; j < container.getHeight()/32 ; j++){
-                                    if(i<currentMap.getWidthOfMap() &&j < currentMap.getHeightOfMap()){
 
-                                            if (currentMap.getTile(i, j) instanceof PathTile){	
-                                                    GravelTileGraphic.draw(i * currentMap.getPixelSize(), j * currentMap.getPixelSize());
-                                                    continue;
-                                            }
-                                            if (currentMap.getTile(i, j) instanceof MapTile){		
-                                                    SandTileGraphic.draw(i * currentMap.getPixelSize(), j * currentMap.getPixelSize());
-                                                    continue;
-                                            }
-
-                                    }
-                                    BrickTileGraphic.draw(i * currentMap.getPixelSize(), j * currentMap.getPixelSize());
-                            }
-                    }
-
-                    //draw the hearts
-                    /*for(int x = 0 ; x < Player.getPlayer().getLives() ; x++){
-                            if(x<8)
-                                    HeartGraphic.draw(x * (5 + HeartGraphic.getWidth()), currentMap.getHeightOfMap() * currentMap.getPixelSize() + 5);
-                            else{
-                                    HeartGraphic.draw((x - 8) * (5 + HeartGraphic.getWidth()), currentMap.getHeightOfMap() * currentMap.getPixelSize() + 15 + HeartGraphic.getHeight());
-                            }
-                    }*/
-
-
-                    //drawing buttons and overlays
-                    /*TowerMenuOverlayGraphic.draw(currentMap.getWidthInPixel(), 0);
-                    ExitButtonGraphic.draw(container.getWidth() - ExitButtonGraphic.getWidth(), container.getHeight() - ExitButtonGraphic.getHeight() - 2);
-                    WaveGraphic.draw(currentMap.getWidthInPixel() - WaveGraphic.getWidth(), currentMap.getHeightInPixel());
-                    CurrencyGraphic.draw(0, container.getHeight() - CurrencyGraphic.getHeight()-5);
-                    //change wavebutton graphic
-                    if(!waveIsInProgress &&!gameOver)
-                            NextWaveActiveGraphic.draw(currentMap.getWidthInPixel() - WaveGraphic.getWidth(), currentMap.getHeightInPixel() + WaveGraphic.getHeight() + 10);
-                    else
-                            NextWaveNonActiveGraphic.draw(currentMap.getWidthInPixel() - WaveGraphic.getWidth(), currentMap.getHeightInPixel() + WaveGraphic.getHeight() + 10);
-
-                    */
-                    //draw tower graphics
-                    /*for (int i =0;i<maximumNumberTowers;i++){
-                            int xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((i)%2)*towerGraphicXOffset;
-                            int yCorner = towerGraphicYStart + (i/2)*towerGraphicYOffset;
-                            Image img;
-                            switch(i){
-                            case 0:
-                                    img = BasicTowerGraphic;
-                                    break;
-                            case 1:
-                                    img = FreezeTowerGraphic;
-                                    break;
-                            case 2:
-                                    img = SniperTowerGraphic;
-                                    break;
-                            default:
-                                    img = BasicTowerGraphic;
-                                    break;
-                            }
-                            img.setRotation(0);
-                            img.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
-
-
-
-                    }*/
-                    //draw sell and upgrade buttons
-                    int xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((4)%2)*towerGraphicXOffset;
-                    int yCorner = towerGraphicYStart + (4/2)*towerGraphicYOffset;
-                    SellButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
-
-                    xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((5)%2)*towerGraphicXOffset;
-                    yCorner = towerGraphicYStart + (5/2)*towerGraphicYOffset;
-                    UpgradeButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
-
-                    // drawing/updating the currency and level
-                    ttf.drawString( CurrencyGraphic.getWidth() + 5, (container.getHeight() - 40), "" + Player.getPlayer().getCredits());
-                    ttf.drawString(currentMap.getWidthInPixel() - 48, currentMap.getHeightInPixel() + 15, currentLevel + "");
-
-                    //if the mouse is on the map, snap to map grid
-                    if(mouseOnMap(Mouse.getX(),container.getHeight()-Mouse.getY())){
-                            Image img;
-                            switch(selectedTower){
-                            case -3:
-                                    img = SellSelectGraphic;
-                                    break;
-                            case -2:
-                                    img = UpgradeSelectGraphic;
-                                    break;
-                            case -1:
-                                    img = TileSelectGraphic;
-                                    break; 
-                            case 0:
-                                    img = BasicTowerGraphic;
-                                    break;
-                            case 1:
-                                    img =  FreezeTowerGraphic;
-                                    break;
-                            case 2:
-                                    img = SniperTowerGraphic;
-                                    break;
-                            default:
-                                    img = TileSelectGraphic;
-                                    break;
-                            }
-                            img.drawCentered(getClosestTileCenter(Mouse.getX()), container.getHeight() - getClosestTileCenter(Mouse.getY()));
-                    }
-            }
 
 
 }
