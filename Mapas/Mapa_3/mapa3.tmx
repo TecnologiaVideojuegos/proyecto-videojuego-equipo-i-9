@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="2018.03.21" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="../Mapa_1/patron_1.tsx"/>
+ <tileset firstgid="361" source="../Mapa_1/patron_2.tsx"/>
+ <layer name="Capa de Patrones 1" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACq1XO04FMQzMcjt4UPArgBPwkDgDLSBxBlrgUim2zCGYJxFkWTOOw1KMkvV+Jh47dnYp5Wn5QSuldKxmXIWdjdl3D3gE6WL4+/1j4ATYBfN1gCbWYPEm+M+BC+AymI84mZZ+7v3v92+AW+AumLeAm12zNTH/V6ezfYfZs9qzGDj/f5/zOis742XXKg+8/0x/+661K41n9oqKv9d5Zl/MrEf5r3TO7ovsHsjkv+XP7AuVBxn/Vf4z+xrYVb77fGH++/pjfbB2+z1mj+pRVP9Y/nconSP9lfYdp8CZGHfuOxn9o37B1nEFXIvR6+l1ntkX9jsfR+X9GbgHIv+j/Lc6ZvtFxyd4X4A9EPnv63ymLmXi8gXeV+Bh4H+ks6pLdl0qFpY/8j/Kc8vD6lUUF/BX8Ffw19H5J6ozs32hrxnxr4h/3Qv+TP/9S/7355H/FflfVf3L9t+RzipefT5T/1lc2sDOap+dq/NvJs8tj+oXqv/O1H+ls6pLvsep+q/8/688V77bOTv/sH665fzDxj7fkv+Z/wKlxcz5J/P/1cR1xJ89/4x0ZtwjDUbx33rOVPyj/Z+tG57XI/uNg//fp0MHBgAQAAA=
+  </data>
+ </layer>
+ <layer name="Capa de patrones 2" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACuWXy0rDQBSGT9JqfQPdWdSqL6ELtdXX0Hpd2m3d6U5X6gMU7+t5BO/P4f0x/A4SCCEQRk4ygj98TAqBL5mfSWf6IrIHO2KTtboMFmACYnipyeAWziB7by8W2Wc8gF0jfxfnIkxCDV7x3sF5jv8Y/yHjEawa+ddxLsEU1OEN7z1c5Pgd/hPGU7Gb/w2cbWjBELzjfYDLHL+mLz/9W83/Js4OTMMwfOB9hKuC/kdhzMC/hXMZZqABn3if4Lqg/3FoGvi3ca7ALIzAF95nuKmof99Y9++TdP8hUsb698lf6D9JqP7bkcmy+1W0/05Avwv8/hp9/7lIZD4K41cvc6DPESTqtdz/+MZ6/+ObkN+/XuDvn67/kP9/roT9j2+s9z8+CdF/cj7R62z/Vcx/+nziMvufZgX+7Pnkv63/9PlE+09S1fpPzid67eKCm0tI+nyiv78B9AM0kwAQAAA=
+  </data>
+ </layer>
+ <layer name="Capa de patrones 3" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACuWWOw7CMBBEd30vrDThGpDkIiS5B0L2UTgRoSI0DDKRaLKdNcU+aeTCxZN25I+IyAtZkbdwUBUJSpKDB7IgT5Lf+/zZeOj/FOS2t1e7/wvcZ8NfmxHuzvDX7D/BOyG94a/Zf4Z3RgZi/xYR3oOWlcER3lbLSvI3HHMhkv1fPNy/Fuz31+v8r787kT1/Nl77T8T+73Bn4p/oH6/9b3g+/x+093tvABAAAA==
+  </data>
+ </layer>
+ <layer name="Capa de patrones 4" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACu2WMQ6DQAwEfVKSL6TMS0DXwDt4ih8dqCDKUPCGKcxKqytHstdnrxGxhacD/0T+s0W8msrv8LvFp/6d+mv8FfYm8quL2ic9yC82+GQvyWDuEp/ZS2YwH83hV9fcYhnx+Rr8Ce6AJ4l/Cn4fxR1QWfx99/0j3j+22HtqBth7agbYe6UzcPX+LfGv3n8kfuXe34r4A1qBQAYAEAAA
+  </data>
+ </layer>
+</map>
