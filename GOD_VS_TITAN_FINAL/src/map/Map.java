@@ -6,11 +6,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * @author		Wei Wang
- * @version		1.0
- * @since		2015-02-28
- */
 
 public class Map {
 

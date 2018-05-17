@@ -1,13 +1,5 @@
 package grid;
 
-/**
- * PathTiles are the components of the design path
- * 
- * @author		Wei Wang
- * @version		1.0
- * @since		2015-02-28
- */
-
 public class PathTile extends Tile{
 	
 	private PathTile nextTile;

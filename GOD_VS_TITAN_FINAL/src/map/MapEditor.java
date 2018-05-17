@@ -11,11 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Queue;
 
-/**
- * @author		Wei Wang
- * @version		1.0
- * @since		2015-03-23
- */
+
 
 public class MapEditor {
 

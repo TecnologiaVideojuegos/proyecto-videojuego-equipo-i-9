@@ -1,13 +1,5 @@
 package grid;
 
-/**
- * MapTile is the component of Map and Scenery Cell
- * 
- * @author		Wei Wang
- * @version		1.0
- * @since		2015-02-28
- */
-
 public class MapTile extends Tile{
 
 	/**
