@@ -221,7 +221,7 @@ public class PlayScreen extends BasicGameState {
 				img = SniperTowerGraphic;
 				break;
 			/*case Freeze:
-				img = SniperTowerGraphic;
+				img = FreezeTowerGraphic;
 				break;*/
 			default:
 				//do nothing

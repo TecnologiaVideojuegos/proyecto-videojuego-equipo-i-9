@@ -20,7 +20,7 @@ public class SubditoTanque extends Subdito{
     private static String name = "Tank";
     private static double health = 400;
     private static double speed = 0.5;
-    private static int reward = 120;
+    private static int reward = 60;
     private static double armor = 20;
     
 }

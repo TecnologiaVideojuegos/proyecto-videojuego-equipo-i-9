@@ -18,7 +18,7 @@ public class SubditoSoldado extends Subdito{
     private static String name = "Soldier";
     private static double health = 250;
     private static double speed = 0.75;
-    private static int reward = 60;
+    private static int reward = 40;
     private static double armor = 10;
     
 }

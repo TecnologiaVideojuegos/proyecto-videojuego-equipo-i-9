@@ -19,7 +19,7 @@ public class SubditoExplorador extends Subdito{
     private static String name = "Pathfinder";
     private static double health = 100;
     private static double speed = 1.4;
-    private static int reward = 100;
+    private static int reward = 30;
     private static double armor = 0;
     
 }
