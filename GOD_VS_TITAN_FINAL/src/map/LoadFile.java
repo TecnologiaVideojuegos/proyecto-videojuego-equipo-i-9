@@ -21,11 +21,7 @@ public class LoadFile {
         
 	//Hay que cambiarlo para poder jugar
         
-	private static final String folderName = "C:\\Users\\dante\\Documents\\GitHub\\proyecto-videojuego-equipo-i-9\\GOD_VS_TITAN_FINAL\\src\\mapSaves";
-        
-        
-        
-        
+	private static final String folderName = System.getProperty("user.dir") + File.separator + "src" + File.separator + "mapSaves";
         
 	private static final File directory = new File(folderName);
 	private static ArrayList<String> files;
