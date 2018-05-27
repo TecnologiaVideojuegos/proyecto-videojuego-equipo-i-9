@@ -486,48 +486,48 @@ public class PlayScreen extends BasicGameState {
 
 	public void loadImages() throws SlickException{
 		//initialize all graphics/images from graphics folder
-		SandTileGraphic = new Image("graficos/cesped.png");
-		GravelTileGraphic = new Image ("graficos/ladrillos.png");
-		BrickTileGraphic = new Image ("graficos/ceramic.png");
-		ExitButtonGraphic = new Image ("graficos/ExitButton.png");
-		UpgradeButtonGraphic = new Image ("graficos/UpgradeButtonGraphic.png");
-		SellButtonGraphic = new Image ("graficos/SellButtonGraphic.png");	
-		UpgradeSelectGraphic = new Image("graficos/UpgradeSelectGraphic.png");
-		SellSelectGraphic = new Image("graficos/SellSelectGraphic.png");
-		CurrencyGraphic = new Image("graficos/CurrencyGraphic.png");
-		TileSelectGraphic = new Image ("graficos/TileSelectGraphic.png");
-		UpgradeSelectGraphic = new Image("graficos/UpgradeSelectGraphic.png");
-		SellSelectGraphic = new Image("graficos/SellSelectGraphic.png");
-		WaveGraphic = new Image ("graficos/WaveGraphic.png");
-		NextWaveActiveGraphic = new Image("graficos/NextWaveActive.png");
-		NextWaveNonActiveGraphic = new Image("graficos/NextWaveNonActive.png");
-		HeartGraphic = new Image("graficos/Heart.png");
-		TowerMenuOverlayGraphic = new Image("graficos/TowerMenuGraphic.png");
+		SandTileGraphic = new Image("Graficos/cesped.png");
+		GravelTileGraphic = new Image ("Graficos/ladrillos.png");
+		BrickTileGraphic = new Image ("Graficos/ceramic.png");
+		ExitButtonGraphic = new Image ("Graficos/ExitButton.png");
+		UpgradeButtonGraphic = new Image ("Graficos/UpgradeButtonGraphic.png");
+		SellButtonGraphic = new Image ("Graficos/SellButtonGraphic.png");	
+		UpgradeSelectGraphic = new Image("Graficos/UpgradeSelectGraphic.png");
+		SellSelectGraphic = new Image("Graficos/SellSelectGraphic.png");
+		CurrencyGraphic = new Image("Graficos/CurrencyGraphic.png");
+		TileSelectGraphic = new Image ("Graficos/TileSelectGraphic.png");
+		UpgradeSelectGraphic = new Image("Graficos/UpgradeSelectGraphic.png");
+		SellSelectGraphic = new Image("Graficos/SellSelectGraphic.png");
+		WaveGraphic = new Image ("Graficos/WaveGraphic.png");
+		NextWaveActiveGraphic = new Image("Graficos/nextWaveActive.png");
+		NextWaveNonActiveGraphic = new Image("Graficos/nextWaveNonActive.png");
+		HeartGraphic = new Image("Graficos/Heart.png");
+		TowerMenuOverlayGraphic = new Image("Graficos/TowerMenuGraphic.png");
 
 
-		BasicTowerGraphic = new Image("graficos/torre_10.png");
-		BasicTowerProjectileGraphic = new Image("graficos/SniperTowerProjectileGraphic.png");
-                SniperTowerGraphic = new Image("graficos/SniperTower.png");
-                SniperBulletGraphic = new Image("graficos/SniProj.png");
+		BasicTowerGraphic = new Image("Graficos/torre_10.png");
+		BasicTowerProjectileGraphic = new Image("Graficos/SniperTowerProjectileGraphic.png");
+                SniperTowerGraphic = new Image("Graficos/SniperTower.png");
+                SniperBulletGraphic = new Image("Graficos/SniProj.png");
                 
-                ComingSoon = new Image("graficos/coming_soon.png");
+                ComingSoon = new Image("Graficos/coming_soon.png");
 
 	}
 
 	public void loadAnimations() throws SlickException{
 		//create sprite sheets and load them into the animation objects
 		//batSpriteSheet = new SpriteSheet("graficos/spritefauno_3.png",100,100, 20);
-                pathfinderSpriteSheet = new SpriteSheet("graficos/spritefauno_3.png",99,75,0);
+                pathfinderSpriteSheet = new SpriteSheet("Graficos/spritefauno_3.png",99,75,0);
 		pathfinderAnimation = new Animation(pathfinderSpriteSheet,150);
-		tankSpriteSheet = new SpriteSheet("graficos/spriteciclope_3.png", 113, 85,0);
+		tankSpriteSheet = new SpriteSheet("Graficos/spriteciclope_3.png", 113, 85,0);
 		tankAnimation = new Animation(tankSpriteSheet, 50);
-		soldierSpriteSheet = new SpriteSheet("graficos/spritegorgona_3.png",98,74,0);
+		soldierSpriteSheet = new SpriteSheet("Graficos/spritegorgona_3.png",98,74,0);
 		soldierAnimation = new Animation(soldierSpriteSheet, 150);
-                shootsoundarrow =  new Sound("graficos/Arrow.ogg");
+                shootsoundarrow =  new Sound("Graficos/Arrow.ogg");
                 
-                shootsoundsniper =  new Sound("graficos/Cannon.ogg");
+                shootsoundsniper =  new Sound("Graficos/Cannon.ogg");
                 
-                deathsound =  new Sound("graficos/muerteciclope.ogg"); 
+                deathsound =  new Sound("Graficos/muerteciclope.ogg"); 
                 
 	}
 

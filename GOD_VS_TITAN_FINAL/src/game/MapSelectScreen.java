@@ -46,10 +46,10 @@ public class MapSelectScreen extends BasicGameState {
 
 
 
-		//SandTile = new Image("graficos/ceramic.png");
+		//SandTile = new Image("Graficos/ceramic.png");
 		font = new Font("Lithos Pro", Font.BOLD, 30);
 		ttf = new TrueTypeFont(font, true);
-                backgroundImage = new Image("graficos/grece.png");
+                backgroundImage = new Image("Graficos/grece.png");
 
 
 

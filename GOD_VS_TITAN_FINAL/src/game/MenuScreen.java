@@ -78,11 +78,11 @@ public class MenuScreen extends BasicGameState{
 	}
 
 	public void loadImagesAndAnimations() throws SlickException{
-		SandTileGraphic = new Image("graficos/ceramic.png");
-		StartGameButtonGraphic = new Image("graficos/StartGameButton.png");
-		TowerDefenseTitleGraphic = new Image("graficos/Titolo1.png");
-		ExitButtonGraphic = new Image ("graficos/ExitButton.png");
-                backgroundImage = new Image("graficos/grece.png");
+		SandTileGraphic = new Image("Graficos/ceramic.png");
+		StartGameButtonGraphic = new Image("Graficos/StartGameButton.png");
+		TowerDefenseTitleGraphic = new Image("Graficos/Titolo1.png");
+		ExitButtonGraphic = new Image ("Graficos/ExitButton.png");
+                backgroundImage = new Image("Graficos/grece.png");
 	}
 
 	public void mouseClicked( float x, float y, StateBasedGame sbg, GameContainer container) throws SlickException{
