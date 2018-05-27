@@ -36,14 +36,14 @@ public class Game extends StateBasedGame {
 	public void initStatesList(GameContainer container) throws SlickException {
 
 		this.enterState(menuScreen);
-                mainMusic = new Music("graficos/regofast.ogg");
+                mainMusic = new Music("Graficos/regofast.ogg");
                 mainMusic.loop();
 		
 	}
 
 	public static void main(String[] args) throws SlickException {
 
-
+                System.out.println(System.getProperty("user.dir")));
 		
 		AppGameContainer app = new AppGameContainer(new Game("God vs Titans"));
 		
