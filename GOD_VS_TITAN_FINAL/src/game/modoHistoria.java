@@ -1,6 +1,9 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package game;
-
-
 
 import java.awt.Font;
 import java.util.ArrayList;
@@ -18,11 +21,14 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import map.*;
+/**
+ *
+ * @author antonio
+ */
+public class modoHistoria extends BasicGameState{
 
-
-public class MapSelectScreen extends BasicGameState {
-
-	Image SandTile;
+    
+    Image SandTile;
         Image backgroundImage;
 	ArrayList<Map> mapList;
 	ArrayList<Rectangle> mapButtonList;
@@ -32,30 +38,31 @@ public class MapSelectScreen extends BasicGameState {
 	private final int bottomMenuWidth = 128;
 	private final int mapButtonXInitialOffset = 20;
 	private final int mapButtonYInitialOffset = 100;
-	private final String selectMapString = "Please select a map to play";
+	private final String selectMapString = "Please select a chapter to play";
 	Font font ;
 	TrueTypeFont ttf;
 
 	LoadFile loading;
-	
-	public MapSelectScreen (int state){
+        
+        
+        public modoHistoria (int state){
 
 	}
-	@Override
-	public void init(GameContainer container, StateBasedGame sbg) throws SlickException {
+        
+    @Override
+    public int getID() {
+        return 2;
+    }
 
+    @Override
+    public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+        font = new Font("Lithos Pro", Font.BOLD, 30);
+        ttf = new TrueTypeFont(font, true);
+        backgroundImage = new Image("graficos/grece.png");
 
+    }
 
-		//SandTile = new Image("graficos/ceramic.png");
-		font = new Font("Lithos Pro", Font.BOLD, 30);
-		ttf = new TrueTypeFont(font, true);
-                backgroundImage = new Image("graficos/grece.png");
-
-
-
-	}
-
-	@Override
+    @Override
 	public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
 		drawMapBackground(container);
 		drawMapButtons(g);
@@ -65,32 +72,21 @@ public class MapSelectScreen extends BasicGameState {
 
 	}
 
-	@Override
-	public void update(GameContainer container, StateBasedGame sbg, int delta) throws SlickException {
-
-		//listen for mouse input
-		if(Mouse.isButtonDown(0))
-			mouseClicked(Mouse.getX(), container.getHeight() - Mouse.getY(), sbg, container);
-		
-
-	}
-
-	
-	
-	public void drawMapBackground(GameContainer container){
-		/*for(int x = 0; x <container.getWidth(); x+=SandTile.getWidth()){
-			for(int y = 0 ; y< container.getHeight(); y+=SandTile.getHeight()){
-				SandTile.draw(x,y);
-			}
-		}*/
+    @Override
+    public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
+        if(Mouse.isButtonDown(0))
+			mouseClicked(Mouse.getX(), gc.getHeight() - Mouse.getY(), sbg, gc);
+    }
+    
+    public void drawMapBackground(GameContainer container){
                 backgroundImage.draw();
 	}
-
-	public void drawMapButtons(Graphics g){
+    
+    public void drawMapButtons(Graphics g){
 		for(int count = 0 ; count<mapButtonList.size() ; count++){
 			g.setColor(Color.black);
 			g.draw(mapButtonList.get(count));
-			g.drawString(loading.getListofFiles(0).get(count) , mapButtonList.get(count).getMinX()+10, mapButtonList.get(count).getMinY()+rectangleHeight/4);	
+			g.drawString(loading.getListofFiles(1).get(count) , mapButtonList.get(count).getMinX()+10, mapButtonList.get(count).getMinY()+rectangleHeight/4);	
 		}
 	}
 	
@@ -100,7 +96,7 @@ public class MapSelectScreen extends BasicGameState {
 		mapList = new ArrayList<Map>();
 		loading = new LoadFile();
 
-		mapList.addAll(loading.getAllMap());
+		mapList.addAll(loading.getHistoryMap());
 
 	}
 	
@@ -135,15 +131,6 @@ public class MapSelectScreen extends BasicGameState {
 			}
 		}
 	}
-
-
-	@Override
-	public int getID() {
-		// TODO Auto-generated method stub
-		return 3;
-	}
-
-
 
 
 }

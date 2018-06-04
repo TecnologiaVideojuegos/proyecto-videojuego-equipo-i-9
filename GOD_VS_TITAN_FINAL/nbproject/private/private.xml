@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dante/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/Subdito/SubditoSoldado.java</file>
-            <file>file:/C:/Users/dante/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/Subdito/SubditoTanque.java</file>
-            <file>file:/C:/Users/dante/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/game/Game.java</file>
-            <file>file:/C:/Users/dante/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/Subdito/SubditoExplorador.java</file>
+            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/Graficos/ladrillos.png</file>
+            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/map/LoadFile.java</file>
+            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/Graficos/ceramic.png</file>
+            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/Graficos/TileSelectGraphic.png</file>
         </group>
     </open-files>
 </project-private>

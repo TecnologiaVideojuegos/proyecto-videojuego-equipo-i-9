@@ -23,12 +23,14 @@ public class Game extends StateBasedGame {
 
 	public static final int menuScreen = 0;
 	public static final int playScreen = 1;
+        public static final int modoHistoria = 2;
 	public static final int mapSelectScreen = 3;
 
 	public Game(String title) {
 		super(title);
 		this.addState(new MenuScreen(menuScreen));
 		this.addState(new PlayScreen(playScreen));
+                this.addState(new modoHistoria(modoHistoria));
 		this.addState(new MapSelectScreen(mapSelectScreen));
 	}
 
@@ -45,7 +47,7 @@ public class Game extends StateBasedGame {
 
 
 		
-		AppGameContainer app = new AppGameContainer(new Game("God vs Titans"));
+		AppGameContainer app = new AppGameContainer(new Game("God vs Titans v.2"));
 		
 		app.setDisplayMode(1024, 1024, false); //es para la imajen
 		app.setShowFPS(false);

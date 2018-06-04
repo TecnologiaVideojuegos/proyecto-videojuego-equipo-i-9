@@ -12,10 +12,12 @@ public class MenuScreen extends BasicGameState{
 
 	Image SandTileGraphic;
 	Image StartGameButtonGraphic;
+        Image HistoryButtonGraphic;
 	Image TowerDefenseTitleGraphic;
 	Image ExitButtonGraphic;
         Image backgroundImage;
 	Rectangle StartGameButton;
+        Rectangle HistoryButton;
 	Rectangle ExitGameButton;
 	Rectangle EditMapButton;
     
@@ -67,19 +69,22 @@ public class MenuScreen extends BasicGameState{
 		}*/
                 backgroundImage.draw();
 		StartGameButtonGraphic.draw(container.getWidth()/2 -StartGameButtonGraphic.getWidth()/2, container.getHeight()/3 -StartGameButtonGraphic.getHeight()/2);
+                HistoryButtonGraphic.draw(container.getWidth()/2 -HistoryButtonGraphic.getWidth()/2, container.getHeight()/6 -HistoryButtonGraphic.getHeight()/2);
 		TowerDefenseTitleGraphic.draw(container.getWidth()/2 - TowerDefenseTitleGraphic.getWidth()/2, TowerDefenseTitleGraphic.getHeight()/2);
-		//ExitButtonGraphic.draw(container.getWidth()-ExitButtonGraphic.getWidth(), container.getHeight()-ExitButtonGraphic.getHeight()-2);
+		ExitButtonGraphic.draw(container.getWidth()-ExitButtonGraphic.getWidth(), container.getHeight()-ExitButtonGraphic.getHeight()-2);
 
 	} 
 
 	public void createRectangleButtons(GameContainer container){
 		StartGameButton = new Rectangle(container.getWidth()/2 -StartGameButtonGraphic.getWidth()/2, container.getHeight()/3 -StartGameButtonGraphic.getHeight()/2, StartGameButtonGraphic.getWidth(), StartGameButtonGraphic.getHeight());
+                HistoryButton = new Rectangle(container.getWidth()/2 -HistoryButtonGraphic.getWidth()/2, container.getHeight()/3 -HistoryButtonGraphic.getHeight()/2, HistoryButtonGraphic.getWidth(), HistoryButtonGraphic.getHeight());
 		ExitGameButton = new Rectangle(container.getWidth()-ExitButtonGraphic.getWidth(), container.getHeight()-ExitButtonGraphic.getHeight()-2, ExitButtonGraphic.getWidth(), ExitButtonGraphic.getHeight());
 	}
 
 	public void loadImagesAndAnimations() throws SlickException{
 		SandTileGraphic = new Image("graficos/ceramic.png");
 		StartGameButtonGraphic = new Image("graficos/StartGameButton.png");
+                HistoryButtonGraphic = new Image("graficos/Historia.png");
 		TowerDefenseTitleGraphic = new Image("graficos/Titolo1.png");
 		ExitButtonGraphic = new Image ("graficos/ExitButton.png");
                 backgroundImage = new Image("graficos/grece.png");

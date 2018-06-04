@@ -6,8 +6,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class LoadFile {
+
 	
 	private Map loadedMap;
 	private int width;
@@ -21,15 +23,18 @@ public class LoadFile {
         
 	//Hay que cambiarlo para poder jugar
         
-	private static final String folderName = "C:\\Users\\dante\\Documents\\GitHub\\proyecto-videojuego-equipo-i-9\\GOD_VS_TITAN_FINAL\\src\\mapSaves";
+	private static final String folderName = "C:\\Users\\antonio\\Documents\\GitHub\\proyecto-videojuego-equipo-i-9\\GOD_VS_TITAN_FINAL\\src\\mapSaves";
         
-        
+        private static final String hfolderName = "C:\\Users\\antonio\\Documents\\GitHub\\proyecto-videojuego-equipo-i-9\\GOD_VS_TITAN_FINAL\\src\\historyMaps";
         
         
         
 	private static final File directory = new File(folderName);
+        private static final File hdirectory = new File(hfolderName);
 	private static ArrayList<String> files;
+        private static ArrayList<String> hfiles;
 	private static ArrayList<Map> mapList;
+        private static ArrayList<Map> historyList;
 	
 	
 	public LoadFile(){
@@ -50,6 +55,17 @@ public class LoadFile {
 
 			}
 		}
+                hfiles = new ArrayList<String>();
+		File[] listOfFilesh = hdirectory.listFiles();
+		for (int i = 0; i < listOfFilesh.length; i++){
+			if (listOfFilesh[i].isFile()) {
+				String name = listOfFilesh[i].getName();
+				final int lastPeriodPos = name.lastIndexOf('.');
+				files.add(listOfFilesh[i].getName().substring(0, lastPeriodPos).toString());
+			} else if (listOfFilesh[i].isDirectory()) {
+
+			}
+		}
 	}
 	
 	/**
@@ -58,9 +74,14 @@ public class LoadFile {
 	 * @return
 	 * @throws IOException
 	 */
-	public Map loadFile(String name) throws IOException{
+	public Map loadFile(String name, int n) throws IOException{
 		this.name = name;
-		File file = new File(folderName + "/" + name + ".txt");
+                File file;
+                if(n == 0){
+                    file = new File(folderName + "/" + name + ".txt");}
+                else{
+                    file = new File(folderName + "/" + name + ".txt");}
+		
 		FileReader fr = new FileReader(file);
 		BufferedReader br =  new BufferedReader(fr);
 		int count = 0;
@@ -98,9 +119,9 @@ public class LoadFile {
 	public ArrayList<Map> getAllMap(){
 		mapList = new ArrayList<Map>();
 		
-		for (int i = 0; i < getListofFiles().size(); i++){
+		for (int i = 0; i < getListofFiles(0).size(); i++){
 			try {
-				loadFile(getListofFiles().get(i));
+				loadFile(getListofFiles(0).get(i),0);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -115,8 +136,25 @@ public class LoadFile {
 		return loadedMap;
 	}
 	
-	public ArrayList<String> getListofFiles(){
-		return files;
+	public ArrayList<String> getListofFiles(int n){
+            if(n == 0)
+                return files;
+            else
+                return hfiles;          
 	}
+
+    public ArrayList<Map> getHistoryMap() {
+        historyList = new ArrayList<Map>();
+		
+		for (int i = 0; i < getListofFiles(1).size(); i++){
+			try {
+				loadFile(getListofFiles(1).get(i),1);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return historyList;
+    }
 
 }
