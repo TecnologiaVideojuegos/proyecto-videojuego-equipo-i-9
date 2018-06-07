@@ -57,12 +57,12 @@ public class LoadFile {
 		}
                 hfiles = new ArrayList<String>();
 		File[] listOfFilesh = hdirectory.listFiles();
-		for (int i = 0; i < listOfFilesh.length; i++){
-			if (listOfFilesh[i].isFile()) {
-				String name = listOfFilesh[i].getName();
-				final int lastPeriodPos = name.lastIndexOf('.');
-				files.add(listOfFilesh[i].getName().substring(0, lastPeriodPos).toString());
-			} else if (listOfFilesh[i].isDirectory()) {
+		for (int e = 0; e < listOfFilesh.length; e++){
+			if (listOfFilesh[e].isFile()) {
+				String name = listOfFilesh[e].getName();
+				final int lastPeriodPosh = name.lastIndexOf('.');
+				files.add(listOfFilesh[e].getName().substring(0, lastPeriodPosh).toString());
+			} else if (listOfFilesh[e].isDirectory()) {
 
 			}
 		}
@@ -80,7 +80,7 @@ public class LoadFile {
                 if(n == 0){
                     file = new File(folderName + "/" + name + ".txt");}
                 else{
-                    file = new File(folderName + "/" + name + ".txt");}
+                    file = new File(hfolderName + "/" + name + ".txt");}
 		
 		FileReader fr = new FileReader(file);
 		BufferedReader br =  new BufferedReader(fr);
@@ -110,7 +110,10 @@ public class LoadFile {
 			mapInfo = sb.toString();
 		} finally {
 			br.close();
-			mapList.add(createMap());
+                        if (n==0){
+                            mapList.add(createMap());}
+                        else{
+                            historyList.add(createMap());}
 		}	
 		
 		return loadedMap;

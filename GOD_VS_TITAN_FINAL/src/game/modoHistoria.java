@@ -30,7 +30,7 @@ public class modoHistoria extends BasicGameState{
     
     Image SandTile;
         Image backgroundImage;
-	ArrayList<Map> mapList;
+	ArrayList<Map> historyList;
 	ArrayList<Rectangle> mapButtonList;
 	private final int rectangleWidth = 150;
 	private final int rectangleHeight = 30;
@@ -93,10 +93,10 @@ public class modoHistoria extends BasicGameState{
 	
 	public void initializeAndLoadMaps(){
 		mapButtonList = new ArrayList<Rectangle>();
-		mapList = new ArrayList<Map>();
+		historyList = new ArrayList<Map>();
 		loading = new LoadFile();
 
-		mapList.addAll(loading.getHistoryMap());
+		historyList.addAll(loading.getHistoryMap());
 
 	}
 	
@@ -104,7 +104,7 @@ public class modoHistoria extends BasicGameState{
 	public void createRectangleMapButtons(GameContainer container){
 		int mapX = mapButtonXInitialOffset;
 		int mapY = mapButtonYInitialOffset;
-		for(Map s : mapList){
+		for(Map s : historyList){
 			Rectangle rectangle = new Rectangle(mapX, mapY, rectangleWidth, rectangleHeight);
 			mapX +=(rectangleWidth+30) ;
 			if(mapX>container.getWidth()-rectangleWidth){
@@ -123,9 +123,9 @@ public class modoHistoria extends BasicGameState{
 			//if it did, load that map, change the frame size to match the map size, and switch states to the PlayScreen state
 			if(mapButtonList.get(count).contains(x, y)){
 				PlayScreen s = (PlayScreen) sbg.getState(Game.playScreen);
-				s.setMap(mapList.get(count));
+				s.setMap(historyList.get(count));
 				AppGameContainer gameContainer = (AppGameContainer) container;
-				gameContainer.setDisplayMode(mapList.get(count).getWidthOfMap()*32 +sideMenuWidth, mapList.get(count).getHeightOfMap()*32 +bottomMenuWidth, false);
+				gameContainer.setDisplayMode(historyList.get(count).getWidthOfMap()*32 +sideMenuWidth, historyList.get(count).getHeightOfMap()*32 +bottomMenuWidth, false);
 				s.createRectangleButtons(gameContainer);
 				sbg.enterState(Game.playScreen);
 			}

@@ -77,7 +77,7 @@ public class MenuScreen extends BasicGameState{
 
 	public void createRectangleButtons(GameContainer container){
 		StartGameButton = new Rectangle(container.getWidth()/2 -StartGameButtonGraphic.getWidth()/2, container.getHeight()/3 -StartGameButtonGraphic.getHeight()/2, StartGameButtonGraphic.getWidth(), StartGameButtonGraphic.getHeight());
-                HistoryButton = new Rectangle(container.getWidth()/2 -HistoryButtonGraphic.getWidth()/2, container.getHeight()/3 -HistoryButtonGraphic.getHeight()/2, HistoryButtonGraphic.getWidth(), HistoryButtonGraphic.getHeight());
+                HistoryButton = new Rectangle(container.getWidth()/2 -HistoryButtonGraphic.getWidth()/2, container.getHeight()/6 -HistoryButtonGraphic.getHeight()/2, HistoryButtonGraphic.getWidth(), HistoryButtonGraphic.getHeight());
 		ExitGameButton = new Rectangle(container.getWidth()-ExitButtonGraphic.getWidth(), container.getHeight()-ExitButtonGraphic.getHeight()-2, ExitButtonGraphic.getWidth(), ExitButtonGraphic.getHeight());
 	}
 
@@ -109,6 +109,19 @@ public class MenuScreen extends BasicGameState{
 			}
 
 			sbg.enterState(Game.mapSelectScreen);
+		}
+                if(HistoryButton.contains(x, y)){
+			modoHistoria s = (modoHistoria) sbg.getState(Game.modoHistoria);
+			s.initializeAndLoadMaps();
+			s.createRectangleMapButtons(container);
+			
+			try {
+			    Thread.sleep(300);                
+			} catch(InterruptedException ex) {
+			    Thread.currentThread().interrupt();
+			}
+
+			sbg.enterState(Game.modoHistoria);
 		}
 
 	}
