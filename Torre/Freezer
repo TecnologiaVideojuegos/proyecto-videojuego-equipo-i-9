@@ -1,0 +1,20 @@
+package towers;
+
+public class Freezer extends Towers {
+
+    public Freezer(double xPos, double yPos, double reloadTime, double angleOfRotation) {
+        super(xPos, yPos, reloadTime, angleOfRotation);
+        this.buyingCost = newbuyingCost;
+        this.refundValue = newRefundValue;
+        this.reloadTime = newReloadTime;
+        this.range = newRange;
+        this.power = newPower;
+        this.towerType = type.Freezer;
+    }
+    //Los atributos estan puetos al azar
+    private static int newbuyingCost = 150;
+    private static int newRefundValue = 140;
+    private static int newReloadTime = 3;
+    private static int newPower = 50;
+    private static double newRange = 70;
+}
