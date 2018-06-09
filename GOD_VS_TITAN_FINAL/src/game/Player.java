@@ -13,6 +13,7 @@ public class Player {
 		}
 		return instance;
 	}
+
 	public  void reset(){
 		lives = STARTINGLIVES;
 		credits = STARTINGCREDITS;
