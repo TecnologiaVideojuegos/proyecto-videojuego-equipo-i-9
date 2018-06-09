@@ -96,7 +96,7 @@ public class modoHistoria extends BasicGameState{
 		historyList = new ArrayList<Map>();
 		loading = new LoadFile();
 
-		historyList.addAll(loading.getHistoryMap());
+		historyList.addAll(loading.getAllMap());
 
 	}
 	

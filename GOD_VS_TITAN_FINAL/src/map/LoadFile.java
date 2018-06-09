@@ -24,17 +24,12 @@ public class LoadFile {
 	//Hay que cambiarlo para poder jugar
         
 	private static final String folderName = "C:\\Users\\antonio\\Documents\\GitHub\\proyecto-videojuego-equipo-i-9\\GOD_VS_TITAN_FINAL\\src\\mapSaves";
-        
-        private static final String hfolderName = "C:\\Users\\antonio\\Documents\\GitHub\\proyecto-videojuego-equipo-i-9\\GOD_VS_TITAN_FINAL\\src\\historyMaps";
-        
+                
         
         
 	private static final File directory = new File(folderName);
-        private static final File hdirectory = new File(hfolderName);
 	private static ArrayList<String> files;
-        private static ArrayList<String> hfiles;
 	private static ArrayList<Map> mapList;
-        private static ArrayList<Map> historyList;
 	
 	
 	public LoadFile(){
@@ -55,17 +50,6 @@ public class LoadFile {
 
 			}
 		}
-                hfiles = new ArrayList<String>();
-		File[] listOfFilesh = hdirectory.listFiles();
-		for (int e = 0; e < listOfFilesh.length; e++){
-			if (listOfFilesh[e].isFile()) {
-				String name = listOfFilesh[e].getName();
-				final int lastPeriodPosh = name.lastIndexOf('.');
-				files.add(listOfFilesh[e].getName().substring(0, lastPeriodPosh).toString());
-			} else if (listOfFilesh[e].isDirectory()) {
-
-			}
-		}
 	}
 	
 	/**
@@ -74,14 +58,9 @@ public class LoadFile {
 	 * @return
 	 * @throws IOException
 	 */
-	public Map loadFile(String name, int n) throws IOException{
+	public Map loadFile(String name) throws IOException{
 		this.name = name;
-                File file;
-                if(n == 0){
-                    file = new File(folderName + "/" + name + ".txt");}
-                else{
-                    file = new File(hfolderName + "/" + name + ".txt");}
-		
+                File file = new File(folderName + "/" + name + ".txt");
 		FileReader fr = new FileReader(file);
 		BufferedReader br =  new BufferedReader(fr);
 		int count = 0;
@@ -110,10 +89,7 @@ public class LoadFile {
 			mapInfo = sb.toString();
 		} finally {
 			br.close();
-                        if (n==0){
-                            mapList.add(createMap());}
-                        else{
-                            historyList.add(createMap());}
+                        mapList.add(createMap());
 		}	
 		
 		return loadedMap;
@@ -124,7 +100,7 @@ public class LoadFile {
 		
 		for (int i = 0; i < getListofFiles(0).size(); i++){
 			try {
-				loadFile(getListofFiles(0).get(i),0);
+				loadFile(getListofFiles(0).get(i));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -140,24 +116,7 @@ public class LoadFile {
 	}
 	
 	public ArrayList<String> getListofFiles(int n){
-            if(n == 0)
-                return files;
-            else
-                return hfiles;          
+            return files;           
 	}
-
-    public ArrayList<Map> getHistoryMap() {
-        historyList = new ArrayList<Map>();
-		
-		for (int i = 0; i < getListofFiles(1).size(); i++){
-			try {
-				loadFile(getListofFiles(1).get(i),1);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return historyList;
-    }
 
 }
