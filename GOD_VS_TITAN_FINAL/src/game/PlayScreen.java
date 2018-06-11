@@ -40,6 +40,7 @@ import map.*;
 import Subdito.Subdito;
 import Subdito.Subdito.direccion;
 import Subdito.SubditoGenerator;
+import static game.Game.menuScreen;
 import niveles.capitulo;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.Sound;
@@ -157,12 +158,7 @@ public class PlayScreen extends BasicGameState {
 
 	@Override
 	public void update(GameContainer container, StateBasedGame sbg, int delta) throws SlickException {
-                if(historia){
-                    Player.getPlayer().setLives(nivel.getStartingLives());
-                    Player.getPlayer().setCredits(nivel.getStartingCoins());
-                    System.out.println("mapa  " + nivel.getMapa() + nivel.getStartingCoins());
-                    mapGraphic = new Image(nivel.getMapa());
-                }
+                
 			if(waveIsInProgress){
 				if(subditoQueue.size()!=0){
 					addCrittersToActiveCritterQueue();
@@ -196,7 +192,7 @@ public class PlayScreen extends BasicGameState {
 
 	@Override
 	public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
-		
+
                         
 			drawMapandOverlay(container, g);
 			drawTowers(g);
@@ -397,7 +393,7 @@ public class PlayScreen extends BasicGameState {
 		int xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((4)%2)*towerGraphicXOffset;
 		int yCorner = towerGraphicYStart + (4/2)*towerGraphicYOffset;
 		SellButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
-                mapGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
+                mapGraphic.draw(0,0);
 		xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((5)%2)*towerGraphicXOffset;
 		yCorner = towerGraphicYStart + (5/2)*towerGraphicYOffset;
 		UpgradeButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
@@ -583,6 +579,7 @@ public class PlayScreen extends BasicGameState {
 
 
 		generator = new SubditoGenerator(locations,currentLevel);
+                generator.setSubditoStream(nivel.getSubditoStream());
 		generator.createSubditoQueue();
 		generator.RandomizeSubQueue();
 		subditoQueue = generator.getSubditoQueue();
@@ -656,8 +653,9 @@ public class PlayScreen extends BasicGameState {
 		if(ExitButton.contains(x,y)){
 			restartGame();
 			AppGameContainer gameContainer = (AppGameContainer) container;
-			gameContainer.setDisplayMode(640, 480, false);
+			gameContainer.setDisplayMode(1024, 1024, false);
 			sbg.enterState(Game.menuScreen);
+
 		}
 
 		//no towers selected
@@ -797,8 +795,14 @@ public class PlayScreen extends BasicGameState {
 	}
 	
         
-    public void setNivel(capitulo nivel) {
+    public void setNivel(capitulo nivel) throws SlickException {
         this.nivel = nivel;
+        		if(historia){
+                    Player.getPlayer().setLives(nivel.getStartingLives());
+                    Player.getPlayer().setCredits(nivel.getStartingCoins());
+                    System.out.println("mapa  " + nivel.getSubditoStream());
+                    mapGraphic = new Image(nivel.getMapa());
+                }
     }
 
     public void setHistoria(boolean historia) {

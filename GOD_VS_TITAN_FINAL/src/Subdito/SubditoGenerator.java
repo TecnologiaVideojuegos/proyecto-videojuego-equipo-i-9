@@ -6,6 +6,8 @@ import java.util.Queue;
 
 
 public class SubditoGenerator {
+
+    
 	
 	public SubditoGenerator (int[][] pLocations,int pLevel){
 		Locations = pLocations;
@@ -26,8 +28,12 @@ public class SubditoGenerator {
 			{15,6,8},
 			{16,6,9},
 			{20,8,10},
-	
-							};
+	};
+        
+	public void setSubditoStream(int[][] SubditoQueue) {
+        this.SubditoStream = SubditoQueue;
+        }
+
 	//automate critter list generation for 100 levels after hardcoded stream
 	public int[][] addSubditoList(int lvlStart){
 		int[][] cListToAppend = new int[1000][3];

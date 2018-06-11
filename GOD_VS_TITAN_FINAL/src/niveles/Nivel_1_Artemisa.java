@@ -17,7 +17,7 @@ public class Nivel_1_Artemisa extends capitulo{
     
     private static int lives = 15;
     private static int coins = 150;
-    private static String mapa = "mapas/1_Artemisa.png";
+    private static String mapa = "mapas/1.Artemisa.png";
     private static int[][] stream = { 
         {0,2,0},
         {1,2,0},

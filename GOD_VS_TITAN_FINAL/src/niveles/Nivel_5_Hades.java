@@ -17,7 +17,7 @@ public class Nivel_5_Hades extends capitulo{
     
     private static int lives = 5;
     private static int coins = 400;
-    private static String mapa = "mapas/5_Hades.png";
+    private static String mapa = "mapas/5.Hades.png";
     private static int[][] stream = { 
         {4,2,0},
         {7,2,0},

@@ -17,7 +17,7 @@ public class Nivel_2_Hefesto extends capitulo{
     
     private static int lives = 10;
     private static int coins = 200;
-    private static String mapa = "mapas/2_Hefesto.png";
+    private static String mapa = "mapas/2.Hefesto.png";
     private static int[][] stream = { 
         {2,2,0},
         {3,2,0},
