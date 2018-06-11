@@ -9,15 +9,15 @@ package niveles;
  *
  * @author antonio
  */
-public class artemisa extends capitulo{
+public class Nivel_1_Artemisa extends capitulo{
     
-    public artemisa (){
+    public Nivel_1_Artemisa (){
         super( lives, coins, stream, mapa);
     }
     
     private static int lives = 15;
     private static int coins = 150;
-    private static String mapa = "mapas/mapaArtemisa.png";
+    private static String mapa = "mapas/1_Artemisa.png";
     private static int[][] stream = { 
         {0,2,0},
         {1,2,0},

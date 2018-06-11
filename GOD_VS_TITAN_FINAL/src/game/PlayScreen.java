@@ -35,12 +35,12 @@ import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-
 import grid.*;
 import map.*;
 import Subdito.Subdito;
 import Subdito.Subdito.direccion;
 import Subdito.SubditoGenerator;
+import niveles.capitulo;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.Sound;
 import towers.Arrow;
@@ -56,6 +56,8 @@ public class PlayScreen extends BasicGameState {
 	private static ArrayList<Proyectil> projectileList = new ArrayList<Proyectil>();
 	ArrayList<Proyectil> pToRemove;
 	static long tickCount = 0;
+        private capitulo nivel ;
+        private boolean historia = false;
 
 	private final int mouseClickDelay = 200;
 	private long lastClick=(-1*mouseClickDelay);
@@ -133,6 +135,7 @@ public class PlayScreen extends BasicGameState {
 
 	Font font ;
 	TrueTypeFont ttf;
+        Image mapGraphic;
     
 
 	public PlayScreen (int state){
@@ -148,11 +151,18 @@ public class PlayScreen extends BasicGameState {
 		loadFonts();
 
 		restartGame();
+
+                
 	}
 
 	@Override
 	public void update(GameContainer container, StateBasedGame sbg, int delta) throws SlickException {
-		
+                if(historia){
+                    Player.getPlayer().setLives(nivel.getStartingLives());
+                    Player.getPlayer().setCredits(nivel.getStartingCoins());
+                    System.out.println("mapa  " + nivel.getMapa() + nivel.getStartingCoins());
+                    mapGraphic = new Image(nivel.getMapa());
+                }
 			if(waveIsInProgress){
 				if(subditoQueue.size()!=0){
 					addCrittersToActiveCritterQueue();
@@ -187,6 +197,7 @@ public class PlayScreen extends BasicGameState {
 	@Override
 	public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
 		
+                        
 			drawMapandOverlay(container, g);
 			drawTowers(g);
 
@@ -357,6 +368,7 @@ public class PlayScreen extends BasicGameState {
 		else
 			NextWaveNonActiveGraphic.draw(currentMap.getWidthInPixel() - WaveGraphic.getWidth(), currentMap.getHeightInPixel() + WaveGraphic.getHeight() + 10);
 
+                
 
 		//dibujar las turres
 		for (int i =0;i<maximumNumberTowers;i++){
@@ -385,7 +397,7 @@ public class PlayScreen extends BasicGameState {
 		int xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((4)%2)*towerGraphicXOffset;
 		int yCorner = towerGraphicYStart + (4/2)*towerGraphicYOffset;
 		SellButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
-
+                mapGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
 		xCorner = currentMap.getWidthInPixel() +towerGraphicXStart + ((5)%2)*towerGraphicXOffset;
 		yCorner = towerGraphicYStart + (5/2)*towerGraphicYOffset;
 		UpgradeButtonGraphic.drawCentered(xCorner +towerButtonWidth/2,yCorner +towerButtonHeight/2);
@@ -758,6 +770,7 @@ public class PlayScreen extends BasicGameState {
 	}
 	public void restartGame() {
 		currentLevel = startingLevel;
+                
 		Player.getPlayer().reset();
 
 		waveIsInProgress = false;
@@ -783,5 +796,13 @@ public class PlayScreen extends BasicGameState {
 		return Game.playScreen;
 	}
 	
+        
+    public void setNivel(capitulo nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setHistoria(boolean historia) {
+        this.historia = historia;
+    }
 
 }

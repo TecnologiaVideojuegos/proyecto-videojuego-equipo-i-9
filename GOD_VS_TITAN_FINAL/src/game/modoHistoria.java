@@ -21,6 +21,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import map.*;
+import niveles.*;
 /**
  *
  * @author antonio
@@ -124,6 +125,21 @@ public class modoHistoria extends BasicGameState{
 			if(mapButtonList.get(count).contains(x, y)){
 				PlayScreen s = (PlayScreen) sbg.getState(Game.playScreen);
 				s.setMap(historyList.get(count));
+                                s.setHistoria(true);
+                                capitulo cap = new Nivel_1_Artemisa();
+                                
+                                switch(count){
+                                    case 0:
+                                        cap = new Nivel_1_Artemisa();
+                                        break;
+                                    case 1:
+                                        cap = new Nivel_2_Hefesto();
+                                        break;
+                                    case 2:
+                                        cap = new Nivel_5_Hades();
+                                        break;                                       
+                                }
+                                s.setNivel(cap);
 				AppGameContainer gameContainer = (AppGameContainer) container;
 				gameContainer.setDisplayMode(historyList.get(count).getWidthOfMap()*32 +sideMenuWidth, historyList.get(count).getHeightOfMap()*32 +bottomMenuWidth, false);
 				s.createRectangleButtons(gameContainer);
@@ -134,3 +150,4 @@ public class modoHistoria extends BasicGameState{
 
 
 }
+

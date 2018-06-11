@@ -3,8 +3,16 @@ package game;
 public class Player {
 	private static int credits = 0;
 	private static int lives;
-	private static final int STARTINGCREDITS = 220;
-	private static final int STARTINGLIVES = 10;
+	private static int STARTINGCREDITS = 220;
+	private static int STARTINGLIVES = 10;
+
+    public static void setLives(int STARTINGLIVES) {
+        Player.lives = STARTINGLIVES;
+    }
+
+    public static void setCredits(int STARTINGCREDITS) {
+        Player.credits = STARTINGCREDITS;
+    }
 	private static Player instance = null;
 	
 	public static synchronized Player getPlayer(){

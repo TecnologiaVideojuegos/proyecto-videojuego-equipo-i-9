@@ -17,7 +17,6 @@ public class capitulo {
     private int startingLives;
     private int startingCoins;
     private int[][] subditoStream;
-    private Image mapa;
     private final String txtmapa;
     
     public capitulo (int lives, int coins, int[][] stream, String txtmapa){
@@ -39,7 +38,7 @@ public class capitulo {
         return subditoStream;
     }
 
-    public Image getMapa() {
-        return mapa;
+    public String getMapa() {
+        return txtmapa;
     }
 }

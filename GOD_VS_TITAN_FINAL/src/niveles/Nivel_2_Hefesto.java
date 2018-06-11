@@ -9,15 +9,15 @@ package niveles;
  *
  * @author antonio
  */
-public class hefesto extends capitulo{
+public class Nivel_2_Hefesto extends capitulo{
     
-    public hefesto (){
+    public Nivel_2_Hefesto (){
         super( lives, coins, stream, mapa);
     }
     
     private static int lives = 10;
     private static int coins = 200;
-    private static String mapa = "mapas/mapaHefesto.png";
+    private static String mapa = "mapas/2_Hefesto.png";
     private static int[][] stream = { 
         {2,2,0},
         {3,2,0},

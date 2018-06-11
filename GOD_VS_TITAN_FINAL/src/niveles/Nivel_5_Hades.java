@@ -9,15 +9,15 @@ package niveles;
  *
  * @author antonio
  */
-public class hades extends capitulo{
+public class Nivel_5_Hades extends capitulo{
     
-    public hades (){
+    public Nivel_5_Hades (){
         super( lives, coins, stream, mapa);
     }
     
     private static int lives = 5;
     private static int coins = 400;
-    private static String mapa = "mapas/mapaHades.png";
+    private static String mapa = "mapas/5_Hades.png";
     private static int[][] stream = { 
         {4,2,0},
         {7,2,0},
