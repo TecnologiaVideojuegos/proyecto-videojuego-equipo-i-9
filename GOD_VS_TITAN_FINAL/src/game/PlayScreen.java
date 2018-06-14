@@ -528,7 +528,7 @@ public class PlayScreen extends BasicGameState {
                 pathfinderSpriteSheet = new SpriteSheet("graficos/spritefauno_3.png",99,75,0);
 		pathfinderAnimation = new Animation(pathfinderSpriteSheet,150);
 		tankSpriteSheet = new SpriteSheet("graficos/spriteciclope_3.png", 113, 85,0);
-		tankAnimation = new Animation(tankSpriteSheet, 50);
+		tankAnimation = new Animation(tankSpriteSheet, 250);
 		soldierSpriteSheet = new SpriteSheet("graficos/spritegorgona_3.png",98,74,0);
 		soldierAnimation = new Animation(soldierSpriteSheet, 150);
                 shootsoundarrow =  new Sound("graficos/Arrow.ogg");

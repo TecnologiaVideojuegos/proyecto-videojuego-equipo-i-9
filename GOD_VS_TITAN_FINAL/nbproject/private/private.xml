@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/niveles/Nivel_1_Artemisa.java</file>
-            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/niveles/Nivel_5_Hades.java</file>
-            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/niveles/capitulo.java</file>
+            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/map/LoadFile.java</file>
             <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/Subdito/SubditoGenerator.java</file>
+            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/game/modoHistoria.java</file>
             <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/game/MapSelectScreen.java</file>
-            <file>file:/C:/Users/antonio/Documents/GitHub/proyecto-videojuego-equipo-i-9/GOD_VS_TITAN_FINAL/src/niveles/Nivel_2_Hefesto.java</file>
         </group>
     </open-files>
 </project-private>

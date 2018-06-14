@@ -136,6 +136,12 @@ public class modoHistoria extends BasicGameState{
                                         cap = new Nivel_2_Hefesto();
                                         break;
                                     case 2:
+                                        cap = new Nivel_3_Apolo();
+                                        break;
+                                    case 3:
+                                        cap = new Nivel_4_Poseidon();
+                                        break;
+                                    case 4:
                                         cap = new Nivel_5_Hades();
                                         break;                                       
                                 }
