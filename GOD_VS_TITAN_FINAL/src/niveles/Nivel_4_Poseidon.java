@@ -12,12 +12,13 @@ package niveles;
 public class Nivel_4_Poseidon extends capitulo{
     
     public Nivel_4_Poseidon (){
-        super( lives, coins, stream, mapa);
+        super( lives, coins, stream, mapa, lvl);
     }
     
     private static int lives = 6;
     private static int coins = 300;
     private static String mapa = "mapas/4.Poseidon.png";
+    private static int lvl = 5;
     private static int[][] stream = { 
         {3,1,0},
         {5,2,0},

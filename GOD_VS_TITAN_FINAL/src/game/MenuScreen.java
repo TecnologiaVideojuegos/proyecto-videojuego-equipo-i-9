@@ -98,8 +98,9 @@ public class MenuScreen extends BasicGameState{
 		lastClick = System.currentTimeMillis();
 
 		if(StartGameButton.contains(x, y)){
-			MapSelectScreen s = (MapSelectScreen) sbg.getState(Game.mapSelectScreen);
+			modoHistoria s = (modoHistoria) sbg.getState(Game.modoHistoria);
 			s.initializeAndLoadMaps();
+                        s.setHistoria(false);
 			s.createRectangleMapButtons(container);
 			
 			try {
@@ -108,13 +109,14 @@ public class MenuScreen extends BasicGameState{
 			    Thread.currentThread().interrupt();
 			}
 
-			sbg.enterState(Game.mapSelectScreen);
+			sbg.enterState(Game.modoHistoria);
 		}
                 if(HistoryButton.contains(x, y)){
 			modoHistoria s = (modoHistoria) sbg.getState(Game.modoHistoria);
 			s.initializeAndLoadMaps();
+                        s.setHistoria(true);
 			s.createRectangleMapButtons(container);
-			
+			s.setCompleto(1);
 			try {
 			    Thread.sleep(300);                
 			} catch(InterruptedException ex) {

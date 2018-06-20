@@ -137,6 +137,7 @@ public class PlayScreen extends BasicGameState {
 	Font font ;
 	TrueTypeFont ttf;
         Image mapGraphic;
+    private boolean complete;
     
 
 	public PlayScreen (int state){
@@ -159,11 +160,14 @@ public class PlayScreen extends BasicGameState {
 	@Override
 	public void update(GameContainer container, StateBasedGame sbg, int delta) throws SlickException {
                 
+            if (historia && currentLevel == 11){
+                complete = true;
+            }
 			if(waveIsInProgress){
 				if(subditoQueue.size()!=0){
 					addCrittersToActiveCritterQueue();
 				}
-				if(!gameOver){
+				if(!gameOver && !complete){
 				updateProjectiles();			
 				updateSubdito();
 				targetSubdito();
@@ -181,7 +185,7 @@ public class PlayScreen extends BasicGameState {
 				}
 
 
-			if(!gameOver){
+			if(!gameOver && !complete){
 			tankAnimation.update(delta);
 			pathfinderAnimation.update(delta);
 			soldierAnimation.update(delta);
@@ -203,7 +207,16 @@ public class PlayScreen extends BasicGameState {
 			}		
 
 
-			
+			if (complete){
+                            String s = "CHAPTER COMPLETE";
+                            if (nivel.getMapa() == "mapas/6.Zeus.png")
+                                s = "ENHORABUENA, HAS COMpLETADO EL JUEGO Y DERROTADO A LAS FUERZAS DE LOS TITANES";
+                            font = new Font("Lithos Pro", Font.PLAIN, 20);
+			ttf = new TrueTypeFont(font, true); 
+			ttf.drawString(20, 60, s, Color.yellow);
+			font = new Font("Lithos Pro", Font.PLAIN, 26);
+			ttf = new TrueTypeFont(font, true); 
+                        }
 			if(gameOver){
 			font = new Font("Lithos Pro", Font.PLAIN, 40);
 			ttf = new TrueTypeFont(font, true); 
@@ -323,7 +336,7 @@ public class PlayScreen extends BasicGameState {
 	}
 
 
-	private void drawMapandOverlay(GameContainer container, Graphics g){
+	private void drawMapandOverlay(GameContainer container, Graphics g) throws SlickException{
 		//draw map and background
 		for(int i = 0 ; i < container.getWidth()/32 ; i++){
 			for(int j = 0 ; j < container.getHeight()/32 ; j++){
@@ -416,7 +429,7 @@ public class PlayScreen extends BasicGameState {
 				img = TileSelectGraphic;
 				break; 
 			case 0:
-				img = BasicTowerGraphic;
+				img = BasicTowerGraphic; 
 				break;
                         case 1:
 				img = SniperTowerGraphic;
@@ -648,13 +661,31 @@ public class PlayScreen extends BasicGameState {
 		//protection against multiple click registration
 		if(lastClick + mouseClickDelay > System.currentTimeMillis())
 			return;
-		lastClick = System.currentTimeMillis();
+		
+                lastClick = System.currentTimeMillis();
 
 		if(ExitButton.contains(x,y)){
+                    if(complete){
+                        modoHistoria s = (modoHistoria) sbg.getState(Game.modoHistoria);
+			s.initializeAndLoadMaps();
+                        s.setHistoria(true);
+			s.createRectangleMapButtons(container);
+                        s.setCompleto(nivel.getLvl());
+			try {
+			    Thread.sleep(300);                
+			} catch(InterruptedException ex) {
+			    Thread.currentThread().interrupt();
+			}
+
+			sbg.enterState(Game.modoHistoria);
+                    }
+                    else{
 			restartGame();
 			AppGameContainer gameContainer = (AppGameContainer) container;
 			gameContainer.setDisplayMode(1024, 1024, false);
 			sbg.enterState(Game.menuScreen);
+                    }
+                        
 
 		}
 
@@ -797,12 +828,9 @@ public class PlayScreen extends BasicGameState {
         
     public void setNivel(capitulo nivel) throws SlickException {
         this.nivel = nivel;
-        		if(historia){
                     Player.getPlayer().setLives(nivel.getStartingLives());
                     Player.getPlayer().setCredits(nivel.getStartingCoins());
-                    System.out.println("mapa  " + nivel.getSubditoStream());
                     mapGraphic = new Image(nivel.getMapa());
-                }
     }
 
     public void setHistoria(boolean historia) {

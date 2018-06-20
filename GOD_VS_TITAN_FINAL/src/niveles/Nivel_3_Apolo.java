@@ -12,12 +12,13 @@ package niveles;
 public class Nivel_3_Apolo extends capitulo{
     
     public Nivel_3_Apolo (){
-        super( lives, coins, stream, mapa);
+        super( lives, coins, stream, mapa, lvl);
     }
     
     private static int lives = 8;
     private static int coins = 250;
     private static String mapa = "mapas/3.Apolo.png";
+    private static int lvl = 4;
     private static int[][] stream = { 
         {3,0,0},
         {4,1,0},

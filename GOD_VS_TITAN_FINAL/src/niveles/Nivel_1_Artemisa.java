@@ -12,12 +12,13 @@ package niveles;
 public class Nivel_1_Artemisa extends capitulo{
     
     public Nivel_1_Artemisa (){
-        super( lives, coins, stream, mapa);
+        super( lives, coins, stream, mapa, lvl);
     }
     
     private static int lives = 15;
     private static int coins = 150;
     private static String mapa = "mapas/1.Artemisa.png";
+    private static int lvl = 2;
     private static int[][] stream = { 
         {0,2,0},
         {1,2,0},

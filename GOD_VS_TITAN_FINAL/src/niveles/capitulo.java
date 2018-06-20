@@ -18,18 +18,24 @@ public class capitulo {
     private int startingCoins;
     private int[][] subditoStream;
     private final String txtmapa;
+    private final int lvl;
     
-    public capitulo (int lives, int coins, int[][] stream, String txtmapa){
+    public capitulo (int lives, int coins, int[][] stream, String txtmapa, int lvl){
         this.startingCoins = coins;
         this.startingLives = lives;
         this.txtmapa = txtmapa;
         this.subditoStream = stream;
+        this.lvl = lvl;
     }
 
     public int getStartingLives() {
         return startingLives;
     }
-
+    
+    public int getLvl(){
+        return lvl;
+    }
+    
     public int getStartingCoins() {
         return startingCoins;
     }

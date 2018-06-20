@@ -44,6 +44,8 @@ public class modoHistoria extends BasicGameState{
 	TrueTypeFont ttf;
 
 	LoadFile loading;
+    private boolean historia;
+    private int lvl = 0;
         
         
         public modoHistoria (int state){
@@ -105,7 +107,7 @@ public class modoHistoria extends BasicGameState{
 	public void createRectangleMapButtons(GameContainer container){
 		int mapX = mapButtonXInitialOffset;
 		int mapY = mapButtonYInitialOffset;
-		for(Map s : historyList){
+                for(Map s : historyList){
 			Rectangle rectangle = new Rectangle(mapX, mapY, rectangleWidth, rectangleHeight);
 			mapX +=(rectangleWidth+30) ;
 			if(mapX>container.getWidth()-rectangleWidth){
@@ -119,13 +121,11 @@ public class modoHistoria extends BasicGameState{
 	}
 
 	public void mouseClicked(int x, int y, StateBasedGame sbg, GameContainer container) throws SlickException{
-		for(int count = 0 ; count < mapButtonList.size() ; count++){
+		for(int count = 0 ; count < (mapButtonList.size()-lvl) ; count++){
 			//compare if the click occurred inside one of the rectangle buttons, 
 			//if it did, load that map, change the frame size to match the map size, and switch states to the PlayScreen state
 			if(mapButtonList.get(count).contains(x, y)){
-				PlayScreen s = (PlayScreen) sbg.getState(Game.playScreen);
-				s.setMap(historyList.get(count));
-                                s.setHistoria(true);
+				
                                 capitulo cap = new Nivel_1_Artemisa();
                                 
                                 switch(count){
@@ -143,8 +143,15 @@ public class modoHistoria extends BasicGameState{
                                         break;
                                     case 4:
                                         cap = new Nivel_5_Hades();
-                                        break;                                       
+                                        break; 
+                                    case 5:
+                                        cap = new Nivel_6_Zeus();
+                                        break;
                                 }
+                                PlayScreen s = (PlayScreen) sbg.getState(Game.playScreen);
+				s.setMap(historyList.get(count));
+                                s.setHistoria(historia);
+                                System.out.println(cap.getMapa());
                                 s.setNivel(cap);
 				AppGameContainer gameContainer = (AppGameContainer) container;
 				gameContainer.setDisplayMode(historyList.get(count).getWidthOfMap()*32 +sideMenuWidth, historyList.get(count).getHeightOfMap()*32 +bottomMenuWidth, false);
@@ -153,6 +160,14 @@ public class modoHistoria extends BasicGameState{
 			}
 		}
 	}
+
+    void setHistoria(boolean b) {
+        this.historia=b;
+    }
+
+    void setCompleto(int i) {
+        this.lvl= 6 - i;
+    }
 
 
 }
