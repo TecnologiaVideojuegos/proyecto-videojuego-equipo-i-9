@@ -1,0 +1,1 @@
+Otro problema encontrado ha sido a la hora de guardar partida, solo se mantiene guardada si no se sale del menu del modo historia.
