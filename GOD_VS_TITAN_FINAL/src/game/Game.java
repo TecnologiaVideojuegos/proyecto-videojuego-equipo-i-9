@@ -51,7 +51,7 @@ public class Game extends StateBasedGame {
 		AppGameContainer app = new AppGameContainer(new Game("God vs Titans v.2"));
 		
 		app.setDisplayMode(1024, 1024, false); //es para la imagen
-		app.setShowFPS(false);
+		app.setShowFPS(true);
 		
 		app.setMinimumLogicUpdateInterval(20);
 		app.setMaximumLogicUpdateInterval(21);
